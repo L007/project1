@@ -18,6 +18,7 @@ public class TokoMaterial {
         // TODO code application logic here
         // this new line
         // this new line again
+        // new line again from artemtech
     }
     
 }
