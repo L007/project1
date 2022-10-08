@@ -63,6 +63,12 @@ public class c_feedback {
         }
     }
 
+public c_gambar(homeBaru home) {
+        this.home = home;
+        home.setVisible(true);
+        home.getBtnGambar().addActionListener(new btnGambar());
+       
+    }
     private class backListener implements ActionListener {
 
         @Override
