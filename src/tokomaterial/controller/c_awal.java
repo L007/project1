@@ -43,6 +43,37 @@ public class c_awal {
             }
         }
     }
+    private class hitungLuas implements KeyListener {
+
+        @Override
+        public void keyTyped(KeyEvent e) {
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            //rumus jumlah bibit internasional
+            //luas*(10000/2*10000/20)*(100*100)*(jml bibit/lubang)*(berat benih/1000 benih)
+//           bibit = ((getluas() * ((10000 / 20) * (10000 / 20))) * (100 / 90) * 3 * (130 / 1000))
+//           hit pupuk = luas x (30kg/36)x100
+//           pupuk = ((getluas()*(30/36))*100)
+            String regex = "[0-9]*\\.?[0-9]*";//untuk menggunakan parameternya
+            if (view.getLuas().getText().matches(regex)) {
+                bibit = ((Double.valueOf(view.getLuas().getText()) * (Math.pow(500, 2) * 0.9 * 0.39)));
+                view.getBibit().setText(Double.toString(bibit / 1000));
+                pupuk = ((Double.valueOf(view.getLuas().getText()) * (0.83) * 100));
+                view.getPupuk().setText(Double.toString(pupuk));
+            } else {
+                view.getLuas().setText("");
+                JOptionPane.showMessageDialog(view, "Silahkan Masukkan Angka dengan BENAR!1!!1");
+            }
+
+        }
+    }
 
     private class v_about implements ActionListener {
 
